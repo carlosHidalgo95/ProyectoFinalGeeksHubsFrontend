@@ -6,7 +6,7 @@ border-radius: 5%;
 padding:5px;
 }
 
-.words {
+.lbl {
     color: wheat;
     display: flex;
     justify-content: center;
@@ -16,8 +16,7 @@ padding:5px;
 .input {
     background-color: white;
     border-radius: 35px;
-    border: solid 1px aqua;
-
+    border: solid 1px red;
     cursor: pointer;
 }
 
@@ -50,20 +49,6 @@ Boton::before {
     border-radius: 10px;
     filter: blur(8px);
     animation: glowing 20s linear infinite;
-}
-
-@keyframes glowing {
-    0% {
-        background-position: 0 0;
-    }
-
-    50% {
-        background-position: 400% 0;
-    }
-
-    100% {
-        background-position: 0 0;
-    }
 }
 
 .error{

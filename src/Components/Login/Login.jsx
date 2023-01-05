@@ -65,10 +65,10 @@ const Login = () => {
 
     return (
         <div>
-            <p>Please login</p>
         <Form className="containerform">
+        <h2>Please log in</h2>
             <Form.Group controlId='email'>
-                <Form.Label className="words">Email</Form.Label>
+                <Form.Label className="lbl">Email</Form.Label>
                 <Form.Control
                     type="email"
                     placeholder='Enter email'
@@ -85,7 +85,7 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group controlId='password'>
-                <Form.Label className="words">Password</Form.Label>
+                <Form.Label className="lbl">Password</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'
@@ -99,6 +99,7 @@ const Login = () => {
                     {errors.password}
                 </Form.Control.Feedback>
             </Form.Group>
+            <p>You dont have an account? <a href="">Register now</a></p>
             <Form.Group className="boxboton" controlId='submit'>
                 <Button type='submit' className="Boton"
                     onClick={handleSubmit} >
