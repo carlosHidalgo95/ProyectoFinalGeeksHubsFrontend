@@ -31,7 +31,6 @@ const RegisterContainer = () => {
         if (!email || email === 'Enter email'){
             newErrors.email = 'Please enter an email'
         } else if (!/.+\@.+\..+/.test(email)) newErrors.email = 'Please input a valid email'
-        if (!dob || dob === '') newErrors.dob = 'Please enter your date of birth'
         if (!password || password === 'Enter your password') newErrors.password= 'Please enter a password'
         else {
             if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
@@ -54,7 +53,8 @@ const RegisterContainer = () => {
         } else {
             console.log("submited form")
             e.preventDefault()
-             axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/register",form)
+            console.log(form);
+             axios.post("https://proyectofinalgeekshubsbackend-production.up.railway.app/auth/register",form)
             .then(response=>{
               console.log(response);
               if (response) {
@@ -63,7 +63,7 @@ const RegisterContainer = () => {
                     email:form.email,
                     password:form.password
                 }
-                axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", body)
+                axios.post("https://proyectofinalgeekshubsbackend-production.up.railway.app/auth/login", body)
                 .then(response => {
                         localStorage.setItem('jwt', JSON.stringify(response.data.jwt));
                         localStorage.setItem('username', response.data.username);
@@ -107,21 +107,6 @@ const RegisterContainer = () => {
                 </Form.Control>
                 <Form.Control.Feedback type='invalid'>
                     {errors.email}
-                </Form.Control.Feedback>
-            </Form.Group>
-            <Form.Group controlId='dob'>
-                <Form.Label className='words'>Date of Birth</Form.Label>
-                <Form.Control
-                    type='date'
-                    placeholder='Enter date of birth'
-                    value={form.dob}
-                    onChange={(e) => setField('dob', e.target.value)}
-                    isInvalid={!!errors.dob}
-                    className='input'
-                >
-                </Form.Control>
-                <Form.Control.Feedback type='invalid'>
-                    {errors.dob}
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password' className='password'>

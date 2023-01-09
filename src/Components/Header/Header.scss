@@ -1,0 +1,22 @@
+.UserSettings {
+    display: flex;
+    align-items: flex-end;
+}
+
+.Navbar {
+    background: rgb(22,21,21);
+    background: linear-gradient(0deg, rgba(22,21,21,1) 69%, rgba(197,194,187,1) 100%);
+    padding-left: 5px;
+}
+
+.words1 {
+    color: antiquewhite;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+.words1:hover{
+    color: white;
+}
+.collapsed{
+    background-color: white;
+}

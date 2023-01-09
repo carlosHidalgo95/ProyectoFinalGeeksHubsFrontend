@@ -6,7 +6,7 @@ import "./Dishes.scss";
 
 const API_URL= "https://proyectofinalgeekshubsbackend-production.up.railway.app/dishes/getAll";
 
-const Dishes= () => {
+const Dishes= ({setSeletectedDish}) => {
 const [dishes, setDishes] = useState([]);
 
 useEffect(() => {

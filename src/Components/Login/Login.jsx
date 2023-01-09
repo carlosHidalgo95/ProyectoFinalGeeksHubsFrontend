@@ -49,13 +49,13 @@ const Login = () => {
             console.log(formErrors);
         }
         else{
-            axios.post("https://proyectobackendpeliculas-production.up.railway.app/auth/login", form)
+            axios.post("https://proyectofinalgeekshubsbackend-production.up.railway.app/auth/login", form)
             .then(response => {
                 localStorage.setItem('jwt', response.data.jwt);
                 localStorage.setItem('username', response.data.username);
                 localStorage.setItem('isAdmin', response.data.admin);
                 changeLogin(response.data.username, response.data.admin);
-                navigate("/movies");
+                navigate("/");
             }).catch(error => {
                 newErrors.noLogin="Unable to login,check your credentials"
                 setErrors(newErrors);
@@ -99,7 +99,7 @@ const Login = () => {
                     {errors.password}
                 </Form.Control.Feedback>
             </Form.Group>
-            <p>You dont have an account? <a href="">Register now</a></p>
+            <p>You dont have an account? <a href="/register">Register now</a></p>
             <Form.Group className="boxboton" controlId='submit'>
                 <Button type='submit' className="Boton"
                     onClick={handleSubmit} >

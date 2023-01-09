@@ -5,16 +5,16 @@ import axios from "axios";
 
 const API_URL= "https://proyectofinalgeekshubsbackend-production.up.railway.app/bookings/getTimes";
 
-
-
-
-const Times=()=>{
+const Times=({setSelectedTime})=>{
     const [times, setTimes] = useState([]);
     const [dishes, setDishes] = useState([]);
     const [date, setDate] = useState([]);
+    const [parrafoTimes,setParrafoTimes] = useState("");
 
-    
-    // let times=new Array();
+    const timeHandler= (e) => {
+        console.log("AAAAAAABBBBBBBBBBB:::::"+e.target.text);
+        setSelectedTime(e.target.text);
+    }
 
 const dateHandler = (date, dateString) => {
     console.log(dateString);
@@ -25,8 +25,12 @@ const dateHandler = (date, dateString) => {
     axios.post(API_URL, body)
     .then(response=>{
         console.log(response)
-        setTimes(response.data);
-        // times=response.data;
+        if (response.data.length!=0) {
+            setParrafoTimes("Horas disponibles:  ");
+            setTimes(response.data);
+        }else{
+            setParrafoTimes("No hay horas disponibles en esta fecha");
+        }
         console.log(times);
 })
 };
@@ -46,10 +50,13 @@ return(
     <div className="timeBox">
           <DatePicker onChange={dateHandler}/>
           <br/>
+          
+          <p>{parrafoTimes}</p>
+
           {times.map((time) => {
                 console.log(time);
               return (
-                <a >{time}  </a>
+                <a onClick={timeHandler}>{time}  </a>
               )
               })}
     </div>
