@@ -1,7 +1,7 @@
 import {Row,Col} from 'react-bootstrap'
-import './OrderContainer.scss'
+import './OrdersContainer.scss'
 import  React,{useState} from 'react';
-import Times from '../../Components/Orders/Orders'
+import Orders from '../../Components/Orders/Orders'
 
 const BookingContainer = () =>{
 
