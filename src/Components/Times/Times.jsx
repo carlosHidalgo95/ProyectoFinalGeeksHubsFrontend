@@ -16,7 +16,6 @@ const Times=({setSelectedDate,setSelectedTime})=>{
     }
 
 const dateHandler = (date, dateString) => {
-    console.log(dateString);
     setDate(dateString);
     setSelectedDate(dateString);
     const body ={
@@ -24,14 +23,12 @@ const dateHandler = (date, dateString) => {
     } 
     axios.post(API_URL, body)
     .then(response=>{
-        console.log(response)
         if (response.data.length!=0) {
             setParrafoTimes("Horas disponibles:  ");
             setTimes(response.data);
         }else{
             setParrafoTimes("No hay horas disponibles en esta fecha");
         }
-        console.log(times);
 })
 };
 
@@ -54,7 +51,6 @@ return(
           <p>{parrafoTimes}</p>
 
           {times.map((time) => {
-                console.log(time);
               return (
                 <a onClick={timeHandler}>{time}  </a>
               )
