@@ -1,5 +1,6 @@
 import {Row,Col} from 'react-bootstrap'
 import './OrdersContainer.scss'
+import './OrdersContainer.scss'
 import  React,{useState} from 'react';
 import Orders from '../../Components/Orders/Orders'
 const OrdersContainer = () =>{
