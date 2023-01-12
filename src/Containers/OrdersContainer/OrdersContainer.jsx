@@ -1,9 +1,8 @@
 import {Row,Col} from 'react-bootstrap'
-import './OrderContainer.scss'
+import './OrdersContainer.scss'
 import  React,{useState} from 'react';
-import Times from '../../Components/Orders/Orders'
-
-const BookingContainer = () =>{
+import Orders from '../../Components/Orders/Orders'
+const OrdersContainer = () =>{
 
     return (
         <Row className='bookingContainer'>
@@ -16,4 +15,4 @@ const BookingContainer = () =>{
         </Row>
   );
 }
-export default BookingContainer;
+export default OrdersContainer;
