@@ -9,6 +9,11 @@ const API_URL= "https://proyectofinalgeekshubsbackend-production.up.railway.app/
 const Dishes= ({setSeletectedDish}) => {
 const [dishes, setDishes] = useState([]);
 
+
+const clickHandler  = (e) => {
+  console.log(e.target);
+}
+
 useEffect(() => {
 fetch(API_URL)
 .then((res) => res.json())
@@ -26,7 +31,9 @@ return(
               if (dish.id_type ===1) {
                 return (
                   <Col xs={12} sm={5} md={4} lg={3}>
-                  <DishBox  key={dish.dish_name} dish={dish} />
+                    <a key={dish.dish_name} onClick={clickHandler}>
+                  <DishBox key={dish.dish_name} dish={dish} />
+                  </a>
                   </Col>
                 )
               }
@@ -58,6 +65,7 @@ return(
               }
             })}
     </Row>
+
   </Container>
 )
 

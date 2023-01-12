@@ -5,20 +5,20 @@ import axios from "axios";
 
 const API_URL= "https://proyectofinalgeekshubsbackend-production.up.railway.app/bookings/getTimes";
 
-const Times=({setSelectedTime})=>{
+const Times=({setSelectedDate,setSelectedTime})=>{
     const [times, setTimes] = useState([]);
     const [dishes, setDishes] = useState([]);
     const [date, setDate] = useState([]);
     const [parrafoTimes,setParrafoTimes] = useState("");
 
     const timeHandler= (e) => {
-        console.log("AAAAAAABBBBBBBBBBB:::::"+e.target.text);
         setSelectedTime(e.target.text);
     }
 
 const dateHandler = (date, dateString) => {
     console.log(dateString);
     setDate(dateString);
+    setSelectedDate(dateString);
     const body ={
         date:dateString,
     } 
