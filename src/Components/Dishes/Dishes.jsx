@@ -8,10 +8,11 @@ const API_URL = "https://proyectofinalgeekshubsbackend-production.up.railway.app
 
 const Dishes = ({ setSeletectedDish }) => {
   const [dishes, setDishes] = useState([]);
-  const [errorApi,setErrorApi] = useState("");
+  const [errorApi, setErrorApi] = useState("");
 
-  const clickHandler = (e) => { 
-    console.log(e.currentTarget);
+  function clickHandler(dish) {
+    console.log(dish);
+    setSeletectedDish(dish);
   }
 
   useEffect(() => {
@@ -35,12 +36,13 @@ const Dishes = ({ setSeletectedDish }) => {
           if (dish.id_type === 1) {
             return (
               <Col xs={12} sm={5} md={4} lg={3}>
-                <div key={dish.dish_name} onClick={clickHandler}>
+                <div key={dish.dish_name} onClick={(e) => clickHandler(dish)}>
                   <DishBox key={dish.dish_name} dish={dish} />
                 </div>
               </Col>
             )
           }
+          return [];
         })}
       </Row>
       <Row className='d-flex dishBox'>
@@ -49,7 +51,9 @@ const Dishes = ({ setSeletectedDish }) => {
           if (dish.id_type === 2) {
             return (
               <Col xs={12} sm={5} md={4} lg={3}>
-                <DishBox key={dish.dish_name} dish={dish} />
+                <div key={dish.dish_name} onClick={(e) => clickHandler(dish)}>
+                  <DishBox key={dish.dish_name} dish={dish} />
+                </div>
               </Col>
             )
           }
@@ -61,7 +65,9 @@ const Dishes = ({ setSeletectedDish }) => {
           if (dish.id_type === 3) {
             return (
               <Col xs={12} sm={5} md={4} lg={3}>
-                <DishBox key={dish.dish_name} dish={dish} />
+                <div key={dish.dish_name} onClick={(e) => clickHandler(dish)}>
+                  <DishBox key={dish.dish_name} dish={dish} />
+                </div>
               </Col>
             )
           }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'antd';
 
-const MovieBox = ({dish}) => {
+const DishBox = ({dish}) => {
 
     return (
         <Card key={dish.name} hoverable style={{width: 240,margin:10}}
@@ -11,4 +11,4 @@ const MovieBox = ({dish}) => {
     );
 };
 
-export default MovieBox;
+export default DishBox;
