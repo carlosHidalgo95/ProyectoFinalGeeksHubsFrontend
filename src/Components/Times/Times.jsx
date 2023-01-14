@@ -33,11 +33,9 @@ const dateHandler = (date, dateString) => {
 };
 
     useEffect(() => {
-        console.log(date);
         if(date.length!==0){
             axios.post(API_URL, `{"date":${date}}`)
             .then(response=>{
-                console.log(response)
                 times=response;
         })    
         }
@@ -47,9 +45,7 @@ return(
     <div className="timeBox">
           <DatePicker onChange={dateHandler}/>
           <br/>
-          
           <p>{parrafoTimes}</p>
-
           {times.map((time) => {
               return (
                 <a onClick={timeHandler}>{time}  </a>

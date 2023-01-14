@@ -40,8 +40,7 @@ const BookingContainer = () =>{
                 primero_id:primero.id,
                 segundo_id:segundo.id
             });
-            console.log(body);
-
+            
             const requestOptions = {
                 method:'POST',
                 headers:{'Content-Type': 'application/json',Authorization: `Bearer ${token}`},
@@ -52,7 +51,6 @@ const BookingContainer = () =>{
                 fetch(API_URL,requestOptions)
                   .then((res) => res.json())
                   .then(data => {
-                    console.log(data);
                     setSuccessMessage("Reserva creada con exito");
                   })
               } catch (err) {
@@ -82,7 +80,6 @@ const BookingContainer = () =>{
     return (
         <Row className='bookingContainer'>
             <Col/>
-            {/* <Col xs={10} sm={8} md={6} lg={4}> */}
             <Col xs={10}>
                 <Times setSelectedDate={setDate} setSelectedTime={setTime}/>
                 <Dishes setSeletectedDish={setSelectedDish}/>

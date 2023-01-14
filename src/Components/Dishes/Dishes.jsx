@@ -11,7 +11,6 @@ const Dishes = ({ setSeletectedDish }) => {
   const [errorApi, setErrorApi] = useState("");
 
   function clickHandler(dish) {
-    console.log(dish);
     setSeletectedDish(dish);
   }
 
