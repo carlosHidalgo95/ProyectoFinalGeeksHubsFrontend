@@ -66,7 +66,7 @@ Una vez echo esto ejecutamos el proyecto con:
 
 La aplicación requiere de estar registrado para poder hacer uso de ella,por lo tanto la página raiz nos lleva directamente al login.
 
-{imagen del login}
+![image](https://user-images.githubusercontent.com/50781684/212573571-77380223-20d7-4760-864e-8ce8864f71dd.png)
 
 En caso de no estar registrados disponemos de un enlace para ir a la página de registro.
 
