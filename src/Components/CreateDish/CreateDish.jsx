@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './CreateDish.scss'
 import DishBox from '../Dishes/DishBox'
+import { useNavigate } from "react-router-dom";
 
 
 const CreateDish = () => {
     const token = localStorage.getItem("jwt");
     const API_URL="https://proyectofinalgeekshubsbackend-production.up.railway.app/dishes/create";
+    const navigate = useNavigate();
+
     const [successMessage, setSuccessMessage] = useState("");
     const [error, setError] = useState([]);
 
@@ -74,11 +77,8 @@ const CreateDish = () => {
                   .then((res) => res.json())
                   .then(data => {
                     setSuccessMessage("Reserva creada con exito");
+                    navigate("/booking");
                   })
-                  .catch((err) => {
-                setError("Ha ocurrido un error inesperado en el servidor")
-
-                  });
               } catch (err) {
                 setError("Ha ocurrido un error inesperado en el servidor");
                 console.log(err);
