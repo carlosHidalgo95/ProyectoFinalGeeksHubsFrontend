@@ -72,6 +72,20 @@ const Dishes = ({ setSeletectedDish }) => {
           }
         })}
       </Row>
+      <Row className='d-flex dishBox'>
+        <h2>Postres</h2>
+        {dishes.map((dish) => {
+          if (dish.id_type === 4) {
+            return (
+              <Col xs={12} sm={5} md={4} lg={3}>
+                <div key={dish.dish_name} onClick={(e) => clickHandler(dish)}>
+                  <DishBox key={dish.dish_name} dish={dish} />
+                </div>
+              </Col>
+            )
+          }
+        })}
+      </Row>
 
     </Container>
   )

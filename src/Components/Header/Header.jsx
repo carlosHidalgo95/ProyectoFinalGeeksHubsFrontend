@@ -31,26 +31,14 @@ function Header() {
       return (
         <Row>
           <Navbar className='Navbar' expand="sm">
-            <Container className='contnav' >
+            <Container>
             <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
-              <Navbar.Toggle className="collapse" aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse  id="basic-navbar-nav">
-                <Nav  className="me-auto">
-                <Col lg={4}>
-                    <Nav.Link className='words1' href="/orders">Reservas</Nav.Link>
-                  </Col>
-                  <Col lg={4}>
-                    <Nav.Link className='words1' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
-                  </Col>
-                  <Col/>
-                  <Col lg={4}>
-                  {/* <NavDropdown className='UserSettings' title={username} id="basic-nav-dropdown">
-                    <NavDropdown.Item href="Settings">Account Settings</NavDropdown.Item>
-                    <NavDropdown.Item href="/orders">
-                      All Orders
-                    </NavDropdown.Item>
-                  </NavDropdown> */}
-                  </Col>
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                <Nav.Link className='words1' href="/booking">Reservar</Nav.Link>
+                    <Nav.Link className='words1' href="/orders">Historial</Nav.Link>
+                    <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
 
                 </Nav>
               </Navbar.Collapse>

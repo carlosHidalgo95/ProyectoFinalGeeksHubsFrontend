@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Orders.scss'
 import { useJwt } from "react-jwt";
 import DishBox from '../Dishes/DishBox'
-import { Col } from 'react-bootstrap';
+import { Col, Row } from 'react-bootstrap';
 
 const Orders = () => {
     const API_URL_USER = "https://proyectofinalgeekshubsbackend-production.up.railway.app/bookings/get";
@@ -58,6 +58,7 @@ const Orders = () => {
                             <h3>Hora:{order.time}</h3>
                         </div>
                         <div className="divDishes justify-content-around">
+                            <Row>
                             {order.dishes.map((dish) => {
                                 return (
                                     <Col xs={12} sm={5} md={4} lg={3}>
@@ -67,6 +68,7 @@ const Orders = () => {
                                     </Col>
                                 )
                             })}
+                            </Row>
                         </div>
                     </div>
                 )
