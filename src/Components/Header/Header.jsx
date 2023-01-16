@@ -41,6 +41,7 @@ function Header() {
                 <Col>
                   <Nav.Link className='words1' href="/orders">Historial</Nav.Link>
                 </Col>
+                <Nav.Link className='words1' href="/create-dish">Crear Plato</Nav.Link>
                 <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
               </Nav>
             </Navbar.Collapse>
@@ -63,6 +64,7 @@ function Header() {
                   <Nav.Link className='words1' href="/orders">Historial</Nav.Link>
                 </Col>
                 <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+
               </Nav>
             </Navbar.Collapse>
         </Navbar>
