@@ -29,42 +29,44 @@ function Header() {
     //Si es admministrador
     if (isAdmin===true) {
       return (
-        <Row>
-          <Navbar className='Navbar' expand="sm">
-            <Container>
-            <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                <Nav.Link className='words1' href="/booking">Reservar</Nav.Link>
-                    <Nav.Link className='words1' href="/orders">Historial</Nav.Link>
-                    <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
-
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </Row>
+        <Row className='headerRow'>
+        <Navbar className='Navbar' expand="sm">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Col/>
+                <Col>
+                  <Nav.Link className='words1' href="/booking">Reservar</Nav.Link>
+                </Col>
+                <Col>
+                  <Nav.Link className='words1' href="/orders">Historial</Nav.Link>
+                </Col>
+                <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+      </Row>
       );
     }else{
       //Si no es administrador
       return (
-        <Row>
-          <Navbar className='Navbar' expand="sm">
-            <Container>
-            <Navbar.Brand className='words1' href="/">Home</Navbar.Brand>
-              <Navbar.Toggle aria-controls="basic-navbar-nav" />
-              <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
-                <Nav.Link className='words1' href="/booking">Reservar</Nav.Link>
-                    <Nav.Link className='words1' href="/orders">Historial</Nav.Link>
-                    <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
-
-                </Nav>
-              </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </Row>
+        <Row className='headerRow'>
+        <Navbar className='Navbar' expand="sm">
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="me-auto">
+                <Col/>
+                <Col>
+                  <Nav.Link className='words1' href="/booking">Reservar</Nav.Link>
+                </Col>
+                <Col>
+                  <Nav.Link className='words1' href="/orders">Historial</Nav.Link>
+                </Col>
+                <Nav.Link className='words1 logout' href="/" onClick={logOutHandler}>Log Out</Nav.Link>
+              </Nav>
+            </Navbar.Collapse>
+        </Navbar>
+      </Row>
       );
     }
   } else {
@@ -77,7 +79,7 @@ function Header() {
               <Nav className="me-auto">
                 <Col/>
                 <Col>
-                  <Nav.Link className='words1' href="/Login">Login</Nav.Link>
+                  <Nav.Link className='words1' href="/">Login</Nav.Link>
                 </Col>
                 <Col>
                   <Nav.Link className='words1' href="/Register">Register</Nav.Link>

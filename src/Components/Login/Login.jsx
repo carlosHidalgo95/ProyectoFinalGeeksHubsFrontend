@@ -55,7 +55,7 @@ const Login = () => {
                 localStorage.setItem('username', response.data.username);
                 localStorage.setItem('isAdmin', response.data.admin);
                 changeLogin(response.data.username, response.data.admin);
-                navigate("/");
+                navigate("/booking");
             }).catch(error => {
                 newErrors.noLogin="Unable to login,check your credentials"
                 setErrors(newErrors);
@@ -66,7 +66,7 @@ const Login = () => {
     return (
         <div>
         <Form className="containerform">
-        <h2>Please log in</h2>
+        <h2 className="texto">Inicia Sesión</h2>
             <Form.Group controlId='email'>
                 <Form.Label className="lbl">Email</Form.Label>
                 <Form.Control
@@ -85,7 +85,7 @@ const Login = () => {
             </Form.Group>
 
             <Form.Group controlId='password'>
-                <Form.Label className="lbl">Password</Form.Label>
+                <Form.Label className="lbl">Contraseña</Form.Label>
                 <Form.Control
                     type='password'
                     placeholder='Enter your password'
@@ -99,7 +99,7 @@ const Login = () => {
                     {errors.password}
                 </Form.Control.Feedback>
             </Form.Group>
-            <p>You dont have an account? <a href="/register">Register now</a></p>
+            <p className="texto">¿No tienes una cuenta? <a href="/register">Registrate ahora</a></p>
             <Form.Group className="boxboton" controlId='submit'>
                 <Button type='submit' className="Boton"
                     onClick={handleSubmit} >

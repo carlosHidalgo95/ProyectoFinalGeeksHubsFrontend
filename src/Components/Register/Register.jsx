@@ -27,20 +27,20 @@ const RegisterContainer = () => {
         const { username, email, dob, password, password2 } = form;
         const newErrors = {};
         
-        if (!username || username === 'Enter username') newErrors.username = 'Please enter a username'
-        if (!email || email === 'Enter email'){
-            newErrors.email = 'Please enter an email'
-        } else if (!/.+\@.+\..+/.test(email)) newErrors.email = 'Please input a valid email'
-        if (!password || password === 'Enter your password') newErrors.password= 'Please enter a password'
+        if (!username || username === 'Introduce nombre de usuario') newErrors.username = 'Debes introducir un nombre de usuario'
+        if (!email || email === 'Introduce un email'){
+            newErrors.email = 'Debes introducir un email'
+        } else if (!/.+\@.+\..+/.test(email)) newErrors.email = 'Debes introducir un email válido'
+        if (!password || password === 'Introduce una contraseña') newErrors.password= 'Por favor,introduce una contraseña'
         else {
-            if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'Password must contain a number'
-            if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 lower case'
-            if (!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'Password must contain at least 1 upper case'
-            if (!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'Password must contain at least 8 characters'
+            if (!/[?=.*[0-9]]*/.test(password)) newErrors.password = 'La contraseña debe contener un número'
+            if (!/[?=.*[a-z]]*/.test(password)) newErrors.password = 'La contraseña debe contener una minuscula'
+            if (!/[?=.*[A-Z]]*/.test(password)) newErrors.password = 'La contraseña debe contener una mayúscula'
+            if (!/[[a-zA-Z0-9]{8,}]*/.test(password)) newErrors.password = 'La contraseña debe contener al menos 8 caracteres'
         }
 
-        if (!password2 || password2 === 'Repeat your password') newErrors.password2 = 'Please repeat your password'
-        else if (password2 !== password) newErrors.password2 = 'The passwords do not match'
+        if (!password2 || password2 === 'Repite tu contraseña') newErrors.password2 = 'Debes repetir la contraseña'
+        else if (password2 !== password) newErrors.password2 = 'Las contraseñas no coinciden'
 
         return newErrors;
     }
@@ -82,7 +82,7 @@ const RegisterContainer = () => {
             <Form.Group controlId='username'>
                 <Form.Label className='words'>Username</Form.Label>
                 <Form.Control
-                    placeholder='Enter username'
+                    placeholder='Introduce nombre de usuario'
                     value={form.username}
                     onChange={(e) => setField('username', e.target.value)}
                     isInvalid={!!errors.username}
@@ -98,7 +98,7 @@ const RegisterContainer = () => {
                 <Form.Label className='words'>Email</Form.Label>
                 <Form.Control
                     type='email'
-                    placeholder='Enter email'
+                    placeholder='Introduce email'
                     value={form.email}
                     onChange={(e) => setField('email', e.target.value)}
                     isInvalid={!!errors.email}
@@ -110,11 +110,11 @@ const RegisterContainer = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password' className='password'>
-            <Form.Label className='words'>Password</Form.Label>
+            <Form.Label className='words'>Contraseña</Form.Label>
 
                 <Form.Control
                     type='password'
-                    placeholder='Enter your password'
+                    placeholder='Introduce una contraseña'
                     value={form.password}
                     onChange={(e) => setField('password', e.target.value)}
                     isInvalid={!!errors.password}
@@ -127,10 +127,10 @@ const RegisterContainer = () => {
                 </Form.Control.Feedback>
             </Form.Group>
             <Form.Group controlId='password2'>
-                <Form.Label className='words'>Password</Form.Label>
+                <Form.Label className='words'>Repite Contraseña</Form.Label>
                 <Form.Control
                     type='password'
-                    placeholder='Repeat your password'
+                    placeholder='Repite tu contraseña'
                     value={form.password2}
                     onChange={(e) => setField('password2', e.target.value)}
                     isInvalid={!!errors.password2}
