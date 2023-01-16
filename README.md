@@ -79,7 +79,7 @@ Una vez logeados la página nos redirecciona a la vista de reserva,en esta vista
 
 Al realizar una reserva se nos redirige a la página de historial de reservas,donde podemos ver nuestras reservas realizadas.
 
-{Imagen página historial}
+![image](https://user-images.githubusercontent.com/50781684/212585190-2b8f9f12-599c-42e9-a9bc-0ca3250461ec.png)
 
 El admin tiene además acceso a una vista donde crear platos nuevos,así como editarlos y borrarlos.
 
